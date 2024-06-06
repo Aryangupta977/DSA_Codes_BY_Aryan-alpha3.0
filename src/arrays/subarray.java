@@ -1,10 +1,10 @@
 package arrays;
-
+import  java.util.*;
 public class subarray {
 
     public static void printsubarray(int numbers[])
     {
-        int ts = 0 , sum = 0, max , min;
+        int ts = 0 , sum = 0, max = Integer.MIN_VALUE , min = Integer.MAX_VALUE;
         for(int i = 0; i< numbers.length; i++)
         {
             int start = i;
@@ -19,11 +19,22 @@ public class subarray {
                 }
                 System.out.println(" --> "+"Sum of sub-array is : " + sum);
                 ts++;
+                if(max < sum)
+                {
+                    max = sum;
+                }
+                if(min > sum)
+                {
+                    min = sum;
+                }
+                sum = 0;
 
             }
             System.out.println();
         }
         System.out.println("Total subarray : " + ts);
+        System.out.println("Max of Sub-array : " + max);
+        System.out.println("Min of Sun-rray : " + min);
     }
     public static void main(String[] args) {
 
