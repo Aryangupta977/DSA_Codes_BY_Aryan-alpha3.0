@@ -21,6 +21,19 @@ public class Kadanesalgo
             ms = Math.max(cs , ms);
         }
 
+        // This condition is for edge case if all no. in array is negative .
+        if(ms == 0)
+        {
+            ms = Integer.MIN_VALUE;
+            for(int i = 0; i< numbers.length; i++)
+            {
+                if(ms < numbers[i])
+                {
+                    ms = numbers[i];
+                }
+            }
+        }
+
         System.out.println("The max sum is : " + ms);
     }
 
